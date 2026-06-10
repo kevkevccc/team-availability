@@ -1,5 +1,5 @@
 // ---------- state ----------
-const ROSTER = ['Aneya', 'Anish', 'Ashray', 'Ishaan', 'Kevin', 'Alex', 'Andrei'];
+const ROSTER = ['Aneya', 'Anish', 'Ashray', 'Ishaan', 'Kevin', 'Alex', 'Andrei', 'Shom', 'Sid', 'Kian'];
 const WIPE_PASSWORD = '8Yma4Dw5576t';
 
 let data = { members: ROSTER.slice(), availability: {} };
