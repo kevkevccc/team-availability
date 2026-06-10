@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Robotics Team Availability</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="logo">!<span class="logo-r">l</span>robotics</div>
+  <div class="nav-right">
+    <button id="tab-my" class="nav-tab active">My Availability</button>
+    <button id="tab-team" class="nav-tab">Team View</button>
+    <div class="user-picker">
+      <select id="member-select">
+        <option value="">Who are you?</option>
+      </select>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="card">
+    <!-- Left panel -->
+    <aside class="left-panel">
+      <div class="brand-mark">!l</div>
+      <div class="subtitle" id="panel-subtitle">Robotics Team</div>
+      <h1 id="panel-title">Availability</h1>
+      <div class="duration"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span>1 hour slots · 1pm&ndash;7pm</span></div>
+      <p class="description" id="panel-description">
+        Select the dates and times you're free for team meetings.
+        Click a highlighted time to remove it. Your teammates will
+        see your availability in the Team View.
+      </p>
+      <div id="member-legend" class="member-legend hidden"></div>
+      <div class="left-footer">
+        <button id="wipe-btn" class="wipe-btn">Wipe all data</button>
+        <div class="cookie-link">Robotics scheduling</div>
+      </div>
+    </aside>
+
+    <!-- Right panel -->
+    <section class="right-panel">
+      <h2 class="select-heading" id="right-heading">Select a Date &amp; Time</h2>
+      <div class="picker">
+        <div class="calendar-col">
+          <div class="month-row">
+            <span class="month-label" id="month-label">June 2026</span>
+            <div class="month-nav">
+              <button id="prev-month" class="nav-arrow" aria-label="Previous month">&#8249;</button>
+              <button id="next-month" class="nav-arrow" aria-label="Next month">&#8250;</button>
+            </div>
+          </div>
+          <div class="weekdays">
+            <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+          </div>
+          <div class="days-grid" id="days-grid"></div>
+          <div class="tz-row">
+            <div class="tz-label">Time zone</div>
+            <div class="tz-value">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span id="tz-name">Local Time</span>
+            </div>
+          </div>
+        </div>
+        <div class="slots-col" id="slots-col">
+          <div class="slots-date" id="slots-date"></div>
+          <div class="slots-list" id="slots-list">
+            <div class="slots-empty">Pick a date to see times</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div id="welcome-overlay" class="overlay hidden">
+  <div class="modal">
+    <div class="modal-mark">!l</div>
+    <h2 class="modal-title">Who are you?</h2>
+    <p class="modal-sub">Pick your name so your availability is saved under it.</p>
+    <div id="welcome-names" class="name-grid"></div>
+  </div>
+</div>
+
+<div id="config-banner" class="config-banner hidden">
+  &#9888; Data storage isn't connected yet — picks won't save. Kevin needs to finish the setup.
+</div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
